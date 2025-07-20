@@ -1,0 +1,16 @@
+📌 MEETING SUMMARY:
+"We've got a lot of support on the tech side and design and all that" "Even if it's like, quote, for the event, not like,quote, for us, we're happy to, you know, assist" "There's this now this guy in New York with this big group, 0:02:53: like basically we make clear that certainly stuff can go for items"
+
+🗂 KEY POINTS DISCUSSED:
+The board of directors met to discuss the future of the church. The meeting was held at the Church of Christ, Scientist, in New York City. The board discussed a number of issues, including how to raise money for the church and how to recruit volunteers. The group also discussed how to use the money raised to help the church in other ways, including through social media and other means. The full meeting transcript is at the bottom of the page. Use the weekly Newsquiz to test your knowledge of stories you saw on CNN.com.
+
+✅ ACTION ITEMS BY SPEAKER:
+
+SPEAKER_00:
+The event will raise money to support homeless in a better way. There will be a silent auction and a raffle. Tickets are being sold online. The event will be held at the Fellowship Hall of the Church in Atlanta, Georgia. It will take place on Saturday and Sunday.
+
+SPEAKER_02:
+Bright Mind is a non-profit based in Bethany, New York. Bright Mind provides food and shelter to people in need on the streets of New York City. The organization also provides training for people who want to help out on the street.
+
+SPEAKER_01:
+From the following transcript by SPEAKER_01, extract action items with timestamps. Write in this format:                • Action item. (hh:mm:ss)                 — Action item, time period.                 -- Time period, action item.
