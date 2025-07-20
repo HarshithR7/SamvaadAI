@@ -1,0 +1,61 @@
+name: Run Samvaad Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      mp3_path:
+        description: 'Path to the input MP3 file'
+        default: 'input/18th_July_2025_Recording.mp3'
+        required: true
+        type: string
+      wav_path:
+        description: 'Path to the input WAV file'
+        default: 'input/18th_July_2025_Recording.wav'
+        required: true
+        type: string
+
+jobs:
+  run_pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Step 1 - Transcribe MP3 to Text
+      run: |
+        python Audio_Transcribe.py "${{ inputs.mp3_path }}"
+
+    - name: Step 2 - Diarize WAV Audio
+      run: |
+        python gpu_diarization.py "${{ inputs.wav_path }}"
+
+    - name: Step 3 - Structure Transcript with Diarization
+      run: |
+        python structured_transcribe_diarization.py
+
+    - name: Step 4 - Summarize and Extract Action Items
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        python summarization_openai.py
+
+    - name: Upload Output Files
+      uses: actions/upload-artifact@v3
+      with:
+        name: samvaad_outputs
+        path: |
+          transcript_output.txt
+          diarization.txt
+          final_speaker_transcript.txt
+          meeting_summary_openai_structured.txt
